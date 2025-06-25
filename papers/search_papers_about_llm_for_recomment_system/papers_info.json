@@ -1,0 +1,61 @@
+{
+  "2201.05461v2": {
+    "title": "RecoMed: A Knowledge-Aware Recommender System for Hypertension Medications",
+    "authors": [
+      "Maryam Sajde",
+      "Hamed Malek",
+      "Mehran Mohsenzadeh"
+    ],
+    "summary": "Background and Objective High medicine diversity has always been a\nsignificant challenge for prescription, causing confusion or doubt in\nphysicians' decision-making process. This paper aims to develop a medicine\nrecommender system called RecoMed to aid the physician in the prescription\nprocess of hypertension by providing information about what medications have\nbeen prescribed by other doctors and figuring out what other medicines can be\nrecommended in addition to the one in question. Methods There are two steps to\nthe developed method: First, association rule mining algorithms are employed to\nfind medicine association rules. The second step entails graph mining and\nclustering to present an enriched recommendation via ATC code, which itself\ncomprises several steps. First, the initial graph is constructed from\nhistorical prescription data. Then, data pruning is performed in the second\nstep, after which the medicines with a high repetition rate are removed at the\ndiscretion of a general medical practitioner. Next, the medicines are matched\nto a well-known medicine classification system called the ATC code to provide\nan enriched recommendation. And finally, the DBSCAN and Louvain algorithms\ncluster medicines in the final step. Results A list of recommended medicines is\nprovided as the system's output, and physicians can choose one or more of the\nmedicines based on the patient's clinical symptoms. Only the medicines of class\n2, related to high blood pressure medications, are used to assess the system's\nperformance. The results obtained from this system have been reviewed and\nconfirmed by an expert in this field.",
+    "pdf_url": "http://arxiv.org/pdf/2201.05461v2",
+    "published": "2022-01-09"
+  },
+  "1611.00484v4": {
+    "title": "RECOME: a New Density-Based Clustering Algorithm Using Relative KNN Kernel Density",
+    "authors": [
+      "Yangli-ao Geng",
+      "Qingyong Li",
+      "Rong Zheng",
+      "Fuzhen Zhuang",
+      "Ruisi He",
+      "Naixue Xiong"
+    ],
+    "summary": "Discovering clusters from a dataset with different shapes, densities, and\nscales is a known challenging problem in data clustering. In this paper, we\npropose the RElative COre MErge (RECOME) clustering algorithm. The core of\nRECOME is a novel density measure, i.e., Relative $K$ nearest Neighbor Kernel\nDensity (RNKD). RECOME identifies core objects with unit RNKD, and {partitions}\nnon-core objects into atom clusters by successively following higher-density\nneighbor relations toward core objects. Core objects and their corresponding\natom clusters are then merged through $\\alpha$-reachable paths on a KNN graph.\nWe discover that the number of clusters computed by RECOME is a step function\nof the $\\alpha$ parameter with jump discontinuity on a small collection of\nvalues. A fast jump discontinuity discovery (FJDD) method is proposed based on\ngraph theory. RECOME is evaluated on both synthetic datasets and real datasets.\nExperimental results indicate that RECOME is able to discover clusters with\ndifferent shapes, densities, and scales. It outperforms six baseline methods on\nboth synthetic datasets and real datasets. Moreover, FJDD is shown to be\neffective to extract the jump discontinuity set of parameter $\\alpha$ for all\ntested datasets, which can ease the task of data exploration and parameter\ntuning.",
+    "pdf_url": "http://arxiv.org/pdf/1611.00484v4",
+    "published": "2016-11-02"
+  },
+  "1802.03005v2": {
+    "title": "Collider Tests of the Renormalizable Coloron Model",
+    "authors": [
+      "Yang Bai",
+      "Bogdan A. Dobrescu"
+    ],
+    "summary": "The coloron, a massive version of the gluon present in gauge extensions of\nQCD, has been searched for at the LHC as a dijet or top quark pair resonance.\nWe point out that in the Renormalizable Coloron Model (ReCoM) with a minimal\nfield content to break the gauge symmetry, a color-octet scalar and a singlet\nscalar are naturally lighter than the coloron because they are pseudo\nNambu-Goldstone bosons. Consequently, the coloron may predominantly decay into\nscalar pairs, leading to novel signatures at the LHC. When the color-octet\nscalar is lighter than the singlet, or when the singlet mass is above roughly 1\nTeV, the signatures consist of multi-jet resonances of multiplicity up to 12,\nincluding topologies with multi-prong jet substructure, slightly displaced\nvertices, and sometimes a top quark pair. When the singlet is the lightest\nReCoM boson and lighter than about 1 TeV, its main decays ($W^+W^-$, $\\gamma\nZ$, $ZZ$) arise at three loops. The LHC signatures then involve two or four\nboosted electroweak bosons, often originating from highly displaced vertices,\nplus one or two pairs of prompt jets or top quarks.",
+    "pdf_url": "http://arxiv.org/pdf/1802.03005v2",
+    "published": "2018-02-08"
+  },
+  "2009.12192v1": {
+    "title": "Tuning Word2vec for Large Scale Recommendation Systems",
+    "authors": [
+      "Benjamin P. Chamberlain",
+      "Emanuele Rossi",
+      "Dan Shiebler",
+      "Suvash Sedhain",
+      "Michael M. Bronstein"
+    ],
+    "summary": "Word2vec is a powerful machine learning tool that emerged from Natural\nLan-guage Processing (NLP) and is now applied in multiple domains, including\nrecom-mender systems, forecasting, and network analysis. As Word2vec is often\nused offthe shelf, we address the question of whether the default\nhyperparameters are suit-able for recommender systems. The answer is\nemphatically no. In this paper, wefirst elucidate the importance of\nhyperparameter optimization and show that un-constrained optimization yields an\naverage 221% improvement in hit rate over thedefault parameters. However,\nunconstrained optimization leads to hyperparametersettings that are very\nexpensive and not feasible for large scale recommendationtasks. To this end, we\ndemonstrate 138% average improvement in hit rate with aruntime\nbudget-constrained hyperparameter optimization. Furthermore, to\nmakehyperparameter optimization applicable for large scale recommendation\nproblemswhere the target dataset is too large to search over, we investigate\ngeneralizinghyperparameters settings from samples. We show that applying\nconstrained hy-perparameter optimization using only a 10% sample of the data\nstill yields a 91%average improvement in hit rate over the default parameters\nwhen applied to thefull datasets. Finally, we apply hyperparameters learned\nusing our method of con-strained optimization on a sample to the Who To Follow\nrecommendation serviceat Twitter and are able to increase follow rates by 15%.",
+    "pdf_url": "http://arxiv.org/pdf/2009.12192v1",
+    "published": "2020-09-24"
+  },
+  "1911.05725v1": {
+    "title": "Recombination: A family of Markov chains for redistricting",
+    "authors": [
+      "Daryl DeFord",
+      "Moon Duchin",
+      "Justin Solomon"
+    ],
+    "summary": "Redistricting is the problem of partitioning a set of geographical units into\na fixed number of districts, subject to a list of often-vague rules and\npriorities. In recent years, the use of randomized methods to sample from the\nvast space of districting plans has been gaining traction in courts of law for\nidentifying partisan gerrymanders, and it is now emerging as a possible\nanalytical tool for legislatures and independent commissions. In this paper, we\nset up redistricting as a graph partition problem and introduce a new family of\nMarkov chains called Recombination (or ReCom) on the space of graph partitions.\nThe main point of comparison will be the commonly used Flip walk, which\nrandomly changes the assignment label of a single node at a time. We present\nevidence that ReCom mixes efficiently, especially in contrast to the\nslow-mixing Flip, and provide experiments that demonstrate its qualitative\nbehavior. We demonstrate the advantages of ReCom on real-world data and explain\nboth the challenges of the Markov chain approach and the analytical tools that\nit enables. We close with a short case study involving the Virginia House of\nDelegates.",
+    "pdf_url": "http://arxiv.org/pdf/1911.05725v1",
+    "published": "2019-10-31"
+  }
+}
