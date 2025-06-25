@@ -1,0 +1,201 @@
+from dotenv import load_dotenv
+from anthropic import Anthropic
+from mcp import ClientSession, StdioServerParameters, types
+from mcp.client.stdio import stdio_client
+from typing import List
+import asyncio
+import nest_asyncio
+from openai import OpenAI
+import json
+import os
+
+nest_asyncio.apply()
+
+load_dotenv()
+
+class MCP_ChatBot:
+
+    def __init__(self):
+        # Initialize session and client objects
+        self.session: ClientSession = None
+        # self.anthropic = Anthropic()
+        self.client = OpenAI(api_key=os.getenv("QWEN_API_KEY"),
+                    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1")
+        self.available_tools: List[dict] = []
+        self.model = "qwen-plus"
+
+    
+
+    async def process_query(self, query):
+        def tool_result_to_dict(tool_result):
+            return {
+                "meta": tool_result.meta,
+                "content": [
+                    {"type": c.type, "text": c.text, "annotations": c.annotations}
+                    for c in tool_result.content
+                ],
+                "isError": tool_result.isError
+            }
+        
+        messages = [{'role':'user', 'content':query}]
+        # response = self.anthropic.messages.create(max_tokens = 2024,
+        #                               model = self.model, 
+        #                               tools = self.available_tools, # tools exposed to the LLM
+        #                               messages = messages)
+        response = self.client.chat.completions.create(
+                        model=self.model, 
+                        messages=messages,
+                        tools=self.available_tools)
+        i = 1
+        
+        print(f"第{i}轮大模型输出信息：{response}\n")
+        assistant_output = response.choices[0].message
+        if assistant_output.content is None:
+            assistant_output.content = ""
+        messages.append(assistant_output)
+
+        if assistant_output.tool_calls == None: 
+            print(f"无需调用工具，我可以直接回复：{assistant_output.content}")
+            return
+        
+        # 如果需要调用工具，则进行模型的多轮调用，直到模型判断无需调用工具
+        while assistant_output.tool_calls != None:
+            tool_info = {
+                "content": "",
+                "role": "tool",
+                "tool_call_id": assistant_output.tool_calls[0].id,
+            }
+
+            tool_name = assistant_output.tool_calls[0].function.name
+            tool_args = json.loads(assistant_output.tool_calls[0].function.arguments)
+            
+            print(f"模型决定调用工具: {tool_name}，参数: {tool_args}")
+            
+            # 执行你定义的函数
+            result = await self.session.call_tool(tool_name, arguments=tool_args)
+            
+            tool_info["content"] = result.content
+            tool_info["name"] = tool_name
+
+            print(f"工具 {tool_name} 执行结果: {result}")
+
+            messages.append(tool_info)
+
+            i += 1
+            print(f"第{i}轮大模型输入信息：{messages}\n")
+
+            response = self.client.chat.completions.create(
+                        model=self.model, 
+                        messages=messages,
+                        tools=self.available_tools)
+            assistant_output = response.choices[0].message
+            if assistant_output.content is None:
+                assistant_output.content = ""
+            messages.append(assistant_output)
+            print(f"第{i}轮大模型输出信息：{assistant_output}\n")
+
+        print(f"最终答案：{assistant_output.content}")
+    
+        # process_query = True
+        # while process_query:
+        #     assistant_content = []
+        #     for content in response.content:
+        #         if content.type =='text':
+        #             print(content.text)
+        #             assistant_content.append(content)
+        #             if(len(response.content) == 1):
+        #                 process_query= False
+        #         elif content.type == 'tool_use':
+        #             assistant_content.append(content)
+        #             messages.append({'role':'assistant', 'content':assistant_content})
+        #             tool_id = content.id
+        #             tool_args = content.input
+        #             tool_name = content.name
+    
+        #             print(f"Calling tool {tool_name} with args {tool_args}")
+                    
+        #             # Call a tool
+        #             #result = execute_tool(tool_name, tool_args): not anymore needed
+        #             # tool invocation through the client session
+        #             result = await self.session.call_tool(tool_name, arguments=tool_args)
+        #             messages.append({"role": "user", 
+        #                               "content": [
+        #                                   {
+        #                                       "type": "tool_result",
+        #                                       "tool_use_id":tool_id,
+        #                                       "content": result.content
+        #                                   }
+        #                               ]
+        #                             })
+        #             response = self.anthropic.messages.create(max_tokens = 2024,
+        #                               model = 'claude-3-7-sonnet-20250219', 
+        #                               tools = self.available_tools,
+        #                               messages = messages) 
+                    
+        #             if(len(response.content) == 1 and response.content[0].type == "text"):
+        #                 print(response.content[0].text)
+        #                 process_query= False
+
+    
+    
+    async def chat_loop(self):
+        """Run an interactive chat loop"""
+        print("\nMCP Chatbot Started!")
+        print("Type your queries or 'quit' to exit.")
+        
+        while True:
+            try:
+                query = input("\nQuery: ").strip()
+        
+                if query.lower() == 'quit':
+                    break
+                    
+                await self.process_query(query)
+                print("\n")
+                    
+            except Exception as e:
+                print(f"\nError: {str(e)}")
+    
+    async def connect_to_server_and_run(self):
+        # Create server parameters for stdio connection
+        server_params = StdioServerParameters(
+            command="uv",  # Executable
+            args=["run", "research_server.py"],  # Optional command line arguments
+            env=None,  # Optional environment variables
+        )
+        async with stdio_client(server_params) as (read, write):
+            async with ClientSession(read, write) as session:
+                self.session = session
+                # Initialize the connection
+                await session.initialize()
+    
+                # List available tools
+                response = await session.list_tools()
+                
+                tools = response.tools
+                print("\nConnected to server with tools:", [tool.name for tool in tools])
+                
+                # self.available_tools = [{
+                #     "name": tool.name,
+                #     "description": tool.description,
+                #     "input_schema": tool.inputSchema
+                # } for tool in response.tools]
+
+                self.available_tools = [{
+                    "type": "function",
+                    "function": {
+                        "name": tool.name,
+                        "description": tool.description,
+                        "input_schema": tool.inputSchema
+                    }} for tool in response.tools]
+    
+                await self.chat_loop()
+
+
+async def main():
+    chatbot = MCP_ChatBot()
+    await chatbot.connect_to_server_and_run()
+  
+
+if __name__ == "__main__":
+    asyncio.run(main())

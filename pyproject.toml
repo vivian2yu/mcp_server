@@ -1,0 +1,15 @@
+[project]
+name = "mcp-server"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.55.0",
+    "arxiv>=2.2.0",
+    "mcp>=1.9.4",
+    "nest-asyncio>=1.6.0",
+    "npx>=0.1.6",
+    "openai>=1.91.0",
+    "python-dotenv>=1.1.1",
+]
