@@ -1,0 +1,20 @@
+{
+  "1504.04885v1": {
+    "title": "Quaternions: a history of complex noncommutative rotation groups in theoretical physics",
+    "authors": [
+      "Johannes C. Familton"
+    ],
+    "summary": "This dissertation is about The history of quaternions and their associated\nrotation groups as it relates to theoretical physics.",
+    "pdf_url": "http://arxiv.org/pdf/1504.04885v1",
+    "published": "2015-04-19"
+  },
+  "2009.02331v3": {
+    "title": "History entanglement entropy",
+    "authors": [
+      "Leonardo Castellani"
+    ],
+    "summary": "A formalism is proposed to describe entangled quantum histories, and their\nentanglement entropy. We define a history vector, living in a tensor space with\nbasis elements corresponding to the allowed histories, i.e. histories with\nnonvanishing amplitudes. The amplitudes are the components of the history\nvector, and contain the dynamical information. Probabilities of measurement\nsequences, and resulting collapse, are given by generalized Born rules: they\nare all expressed by means of projections and scalar products involving the\nhistory vector. Entangled history states are introduced, and a history density\nmatrix is defined in terms of ensembles of history vectors. The corresponding\nhistory entropies (and history entanglement entropies for composite systems)\nare explicitly computed in two examples taken from quantum computation\ncircuits.",
+    "pdf_url": "http://arxiv.org/pdf/2009.02331v3",
+    "published": "2020-09-04"
+  }
+}

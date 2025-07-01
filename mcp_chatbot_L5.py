@@ -27,16 +27,7 @@ class MCP_ChatBot:
     
 
     async def process_query(self, query):
-        def tool_result_to_dict(tool_result):
-            return {
-                "meta": tool_result.meta,
-                "content": [
-                    {"type": c.type, "text": c.text, "annotations": c.annotations}
-                    for c in tool_result.content
-                ],
-                "isError": tool_result.isError
-            }
-        
+
         messages = [{'role':'user', 'content':query}]
         # response = self.anthropic.messages.create(max_tokens = 2024,
         #                               model = self.model, 

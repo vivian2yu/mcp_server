@@ -1,0 +1,56 @@
+{
+  "2502.11312v1": {
+    "title": "AI Generations: From AI 1.0 to AI 4.0",
+    "authors": [
+      "Jiahao Wu",
+      "Hengxu You",
+      "Jing Du"
+    ],
+    "summary": "This paper proposes that Artificial Intelligence (AI) progresses through\nseveral overlapping generations: AI 1.0 (Information AI), AI 2.0 (Agentic AI),\nAI 3.0 (Physical AI), and now a speculative AI 4.0 (Conscious AI). Each of\nthese AI generations is driven by shifting priorities among algorithms,\ncomputing power, and data. AI 1.0 ushered in breakthroughs in pattern\nrecognition and information processing, fueling advances in computer vision,\nnatural language processing, and recommendation systems. AI 2.0 built on these\nfoundations through real-time decision-making in digital environments,\nleveraging reinforcement learning and adaptive planning for agentic AI\napplications. AI 3.0 extended intelligence into physical contexts, integrating\nrobotics, autonomous vehicles, and sensor-fused control systems to act in\nuncertain real-world settings. Building on these developments, AI 4.0 puts\nforward the bold vision of self-directed AI capable of setting its own goals,\norchestrating complex training regimens, and possibly exhibiting elements of\nmachine consciousness. This paper traces the historical foundations of AI\nacross roughly seventy years, mapping how changes in technological bottlenecks\nfrom algorithmic innovation to high-performance computing to specialized data,\nhave spurred each generational leap. It further highlights the ongoing\nsynergies among AI 1.0, 2.0, 3.0, and 4.0, and explores the profound ethical,\nregulatory, and philosophical challenges that arise when artificial systems\napproach (or aspire to) human-like autonomy. Ultimately, understanding these\nevolutions and their interdependencies is pivotal for guiding future research,\ncrafting responsible governance, and ensuring that AI transformative potential\nbenefits society as a whole.",
+    "pdf_url": "http://arxiv.org/pdf/2502.11312v1",
+    "published": "2025-02-16"
+  },
+  "2101.04283v1": {
+    "title": "A Brief Survey of Associations Between Meta-Learning and General AI",
+    "authors": [
+      "Huimin Peng"
+    ],
+    "summary": "This paper briefly reviews the history of meta-learning and describes its\ncontribution to general AI. Meta-learning improves model generalization\ncapacity and devises general algorithms applicable to both in-distribution and\nout-of-distribution tasks potentially. General AI replaces task-specific models\nwith general algorithmic systems introducing higher level of automation in\nsolving diverse tasks using AI. We summarize main contributions of\nmeta-learning to the developments in general AI, including memory module,\nmeta-learner, coevolution, curiosity, forgetting and AI-generating algorithm.\nWe present connections between meta-learning and general AI and discuss how\nmeta-learning can be used to formulate general AI algorithms.",
+    "pdf_url": "http://arxiv.org/pdf/2101.04283v1",
+    "published": "2021-01-12"
+  },
+  "2306.01795v1": {
+    "title": "AI and the creative realm: A short review of current and future applications",
+    "authors": [
+      "Fabio Crimaldi",
+      "Manuele Leonelli"
+    ],
+    "summary": "This study explores the concept of creativity and artificial intelligence\n(AI) and their recent integration. While AI has traditionally been perceived as\nincapable of generating new ideas or creating art, the development of more\nsophisticated AI models and the proliferation of human-computer interaction\ntools have opened up new possibilities for AI in artistic creation. This study\ninvestigates the various applications of AI in a creative context,\ndifferentiating between the type of art, language, and algorithms used. It also\nconsiders the philosophical implications of AI and creativity, questioning\nwhether consciousness can be researched in machines and AI's potential\ninterests and decision-making capabilities. Overall, we aim to stimulate a\nreflection on AI's use and ethical implications in creative contexts.",
+    "pdf_url": "http://arxiv.org/pdf/2306.01795v1",
+    "published": "2023-06-01"
+  },
+  "2401.14484v1": {
+    "title": "Design Principles for Generative AI Applications",
+    "authors": [
+      "Justin D. Weisz",
+      "Jessica He",
+      "Michael Muller",
+      "Gabriela Hoefer",
+      "Rachel Miles",
+      "Werner Geyer"
+    ],
+    "summary": "Generative AI applications present unique design challenges. As generative AI\ntechnologies are increasingly being incorporated into mainstream applications,\nthere is an urgent need for guidance on how to design user experiences that\nfoster effective and safe use. We present six principles for the design of\ngenerative AI applications that address unique characteristics of generative AI\nUX and offer new interpretations and extensions of known issues in the design\nof AI applications. Each principle is coupled with a set of design strategies\nfor implementing that principle via UX capabilities or through the design\nprocess. The principles and strategies were developed through an iterative\nprocess involving literature review, feedback from design practitioners,\nvalidation against real-world generative AI applications, and incorporation\ninto the design process of two generative AI applications. We anticipate the\nprinciples to usefully inform the design of generative AI applications by\ndriving actionable design recommendations.",
+    "pdf_url": "http://arxiv.org/pdf/2401.14484v1",
+    "published": "2024-01-25"
+  },
+  "2306.02781v2": {
+    "title": "A survey of Generative AI Applications",
+    "authors": [
+      "Roberto Gozalo-Brizuela",
+      "Eduardo C. Garrido-Merch\u00e1n"
+    ],
+    "summary": "Generative AI has experienced remarkable growth in recent years, leading to a\nwide array of applications across diverse domains. In this paper, we present a\ncomprehensive survey of more than 350 generative AI applications, providing a\nstructured taxonomy and concise descriptions of various unimodal and even\nmultimodal generative AIs. The survey is organized into sections, covering a\nwide range of unimodal generative AI applications such as text, images, video,\ngaming and brain information. Our survey aims to serve as a valuable resource\nfor researchers and practitioners to navigate the rapidly expanding landscape\nof generative AI, facilitating a better understanding of the current\nstate-of-the-art and fostering further innovation in the field.",
+    "pdf_url": "http://arxiv.org/pdf/2306.02781v2",
+    "published": "2023-06-05"
+  }
+}

@@ -1,0 +1,49 @@
+MCP Architecture Visual Summary
+=============================
+
+[Client Application]          [Server]
+      |                            |
+      | 1. Initialize Request    |
+      |-------------------------->|
+      |                            |
+      | 2. Initialize Response     |
+      |<--------------------------|
+      |                            |
+      | 3. Initialized Notification|
+      |-------------------------->|
+      |                            |
+      |<===[ Bi-directional Communication ]==>|
+      |                            |
+      | 4. Request/Response        |
+      |<-------------------------->|
+      |                            |
+      | 5. Notifications           |
+      |<-------------------------->|
+      |                            |
+      |<===[ Termination ]==>|
+      |                            |
+      | 6. close() or Error        |
+      |<-------------------------->|
+
+
+Protocol Layer:
+- Message framing
+- Request/response linking
+- JSON-RPC 2.0 format
+
+Transport Options:
+┌───────────────┐   ┌──────────────────────┐
+│ Stdio         │   │ Streamable HTTP      │
+│ Local Process │   │ Remote Communication │
+└───────────────┘   └──────────────────────┘
+
+Security Measures:
+- TLS for remote connections
+- Input validation
+- Access controls
+- Rate limiting
+
+Error Handling:
+- Standard codes (-32xxx)
+- Graceful recovery
+- Resource cleanup

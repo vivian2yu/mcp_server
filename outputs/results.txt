@@ -1,0 +1,15 @@
+Summary of Findings:
+
+1. Paper: Hierarchically Fusing Long and Short-Term User Interests for Click-Through Rate Prediction in Product Search (ID: 2304.02089v1)
+   - This paper introduces a new approach called Hierarchical Interests Fusing Network (HIFN) to estimate Click-Through Rate (CTR) in personalized product search.
+   - It addresses challenges related to extracting and fusing both long-term and short-term user interests, which are often entangled.
+   - The HIFN model consists of modules for extracting short-term interests, extracting long-term interests, fusing these interests, and disentangling them if necessary.
+   - The method was evaluated on a real-world e-commerce platform and showed superior performance compared to existing state-of-the-art methods.
+
+2. Paper: IDNP: Interest Dynamics Modeling using Generative Neural Processes for Sequential Recommendation (ID: 2208.04600v1)
+   - This study focuses on modeling user interests in sequential recommendation systems by addressing concerns about both short- and long-term interests.
+   - The proposed framework, IDNP, models user interests from a functional perspective and learns a global interest function family to define each user's long-term interest.
+   - It is designed to handle sparse and non-consecutive interaction sequences, making it effective even when interaction data is limited.
+   - The model reconstructs long-term user interest functions and predicts interactions at upcoming query timesteps, showing strong performance on real-world datasets.
+
+Both papers contribute innovative approaches to understanding and predicting user behavior by effectively modeling and integrating different aspects of user interests.

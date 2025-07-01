@@ -1,0 +1,27 @@
+{
+  "2304.02089v1": {
+    "title": "Hierarchically Fusing Long and Short-Term User Interests for Click-Through Rate Prediction in Product Search",
+    "authors": [
+      "Qijie Shen",
+      "Hong Wen",
+      "Jing Zhang",
+      "Qi Rao"
+    ],
+    "summary": "Estimating Click-Through Rate (CTR) is a vital yet challenging task in\npersonalized product search. However, existing CTR methods still struggle in\nthe product search settings due to the following three challenges including how\nto more effectively extract users' short-term interests with respect to\nmultiple aspects, how to extract and fuse users' long-term interest with\nshort-term interests, how to address the entangling characteristic of long and\nshort-term interests. To resolve these challenges, in this paper, we propose a\nnew approach named Hierarchical Interests Fusing Network (HIFN), which consists\nof four basic modules namely Short-term Interests Extractor (SIE), Long-term\nInterests Extractor (LIE), Interests Fusion Module (IFM) and Interests\nDisentanglement Module (IDM). Specifically, SIE is proposed to extract user's\nshort-term interests by integrating three fundamental interests encoders within\nit namely query-dependent, target-dependent and causal-dependent interest\nencoder, respectively, followed by delivering the resultant representation to\nthe module LIE, where it can effectively capture user long-term interests by\ndevising an attention mechanism with respect to the short-term interests from\nSIE module. In IFM, the achieved long and short-term interests are further\nfused in an adaptive manner, followed by concatenating it with original raw\ncontext features for the final prediction result. Last but not least,\nconsidering the entangling characteristic of long and short-term interests, IDM\nfurther devises a self-supervised framework to disentangle long and short-term\ninterests. Extensive offline and online evaluations on a real-world e-commerce\nplatform demonstrate the superiority of HIFN over state-of-the-art methods.",
+    "pdf_url": "http://arxiv.org/pdf/2304.02089v1",
+    "published": "2023-04-04"
+  },
+  "2208.04600v1": {
+    "title": "IDNP: Interest Dynamics Modeling using Generative Neural Processes for Sequential Recommendation",
+    "authors": [
+      "Jing Du",
+      "Zesheng Ye",
+      "Lina Yao",
+      "Bin Guo",
+      "Zhiwen Yu"
+    ],
+    "summary": "Recent sequential recommendation models rely increasingly on consecutive\nshort-term user-item interaction sequences to model user interests. These\napproaches have, however, raised concerns about both short- and long-term\ninterests. (1) {\\it short-term}: interaction sequences may not result from a\nmonolithic interest, but rather from several intertwined interests, even within\na short period of time, resulting in their failures to model skip behaviors;\n(2) {\\it long-term}: interaction sequences are primarily observed sparsely at\ndiscrete intervals, other than consecutively over the long run. This renders\ndifficulty in inferring long-term interests, since only discrete interest\nrepresentations can be derived, without taking into account interest dynamics\nacross sequences. In this study, we address these concerns by learning (1)\nmulti-scale representations of short-term interests; and (2) dynamics-aware\nrepresentations of long-term interests. To this end, we present an\n\\textbf{I}nterest \\textbf{D}ynamics modeling framework using generative\n\\textbf{N}eural \\textbf{P}rocesses, coined IDNP, to model user interests from a\nfunctional perspective. IDNP learns a global interest function family to define\neach user's long-term interest as a function instantiation, manifesting\ninterest dynamics through function continuity. Specifically, IDNP first encodes\neach user's short-term interactions into multi-scale representations, which are\nthen summarized as user context. By combining latent global interest with user\ncontext, IDNP then reconstructs long-term user interest functions and predicts\ninteractions at upcoming query timestep. Moreover, IDNP can model such interest\nfunctions even when interaction sequences are limited and non-consecutive.\nExtensive experiments on four real-world datasets demonstrate that our model\noutperforms state-of-the-arts on various evaluation metrics.",
+    "pdf_url": "http://arxiv.org/pdf/2208.04600v1",
+    "published": "2022-08-09"
+  }
+}
